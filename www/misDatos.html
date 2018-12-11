@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> </title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+
+<!--CSS-->
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+ 
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script src="xdk/init-dev.js"></script>
+
+</head>
+<body onclick="afuera();">
+
+       <header id="menu_generico">
+        
+      </header>
+
+       <seccion class="pull-right">
+		<aside  class="pull-right">
+			<ul>
+                <li class="gris pedidos"><a class="logo2" href="pedido.html"><span  class="fa fa-eye"></span>Mis pedidos<span class="fa fa-chevron-right pull-right"></span></a></li>
+				<li class="gris pedidos"><a class="logo2" href="pedido_producto.html"><span class="fa fa-shopping-cart"></span>Mi carrito<span class="fa fa-chevron-right pull-right"></span></a></li>
+                <li class="gris pedidos"><a class="logo2" onclick="met_pago()"><span class="fa fa-dollar"></span>Formas de pago<span class="fa fa-chevron-right pull-right"></span></a></li>
+                <li class="gris pedidos"><a class="logo2" href="pedido_domicilio.html"><span  class="fa fa-list"></span>Menú<span class="fa fa-chevron-right pull-right"></span></a></li>
+			</ul>
+		</aside>
+	</seccion>
+    
+<div class="col-md-12 nav-sup text-center bg-gris text-blanco">
+    <div class="logo pull-left valing-baseline inline"><img src="img/imgLogo.png"></div>
+    <h1 class="titulo text-center inline valing-baseline text-blanco"><span class="fa fa-pencil-square-o"> </span> Datos personales</h1>
+    <div class="btn-regresar pull-right inline valing-baseline"><!--<a><span class="fa fa-bars mn"></span></a>--><a onclick="perfil();"><span class="fa fa-arrow-circle-o-left"></span></a></div>
+</div>  
+
+
+<div class="row col-md-12 container" id="main">
+
+<form  class="form-group ">
+        
+     
+<div class="form-group"> 
+   
+    <label  class="col-xs-4 control-label" style="text-align:right;"><span class="naranja">*</span>Tarjeta:</label>
+    
+        <div class="col-xs-6">
+            <input type="text" id="txtTarjeta" disabled name="txtTarjeta" class="form-control input-sm required"  maxlength="50" />
+        </div> 
+    
+     <label  class="col-xs-4 control-label" style="text-align:right;"><span class="naranja">*</span>Contraseña:</label>
+    
+        <div class="col-xs-6">
+            <input type="password" id="txtpass" class="form-control input-sm required"  maxlength="50" />
+        </div> 
+    
+     <label  class="col-xs-4 control-label" style="text-align:right;"><span class="naranja">*</span>Representante:</label>
+    
+        <div class="col-xs-6">
+            <input type="text" id="txtApellidos" class="form-control input-sm required"  maxlength="50" readonly />
+        </div>
+    
+    <label  class="col-xs-4 control-label" style="text-align:right;"><span class="naranja">*</span>Empresa:</label>
+    
+        <div class="col-xs-6">
+            <input type="text" id="txtNombre" class="form-control input-sm required"  maxlength="50" readonly />
+        </div> 
+    
+    <label  class="col-xs-4 control-label" style="text-align:right;"><span class="naranja">*</span>Sexo:</label>
+    
+        <div class="col-xs-6 ">
+            <select id="txtSexo" class="form-control input-sm" >
+                <option value="">Seleccione</option>
+                  <option value="F">Femenino</option>
+                  <option value="M">Masculino</option>
+
+            </select>
+        </div> 
+    
+    <label  class="col-xs-4 control-label" style="text-align:right;"><span class="naranja">*</span>Cumpleaños:</label>
+    
+        <div class="col-xs-6">
+            <input id="txtCumple" class="form-control input-sm date required" type=date >
+           
+        </div>  
+    
+    
+        <label  class="col-xs-4 control-label" style="text-align:right;"><span class="naranja">*</span>E-Mail:</label>
+    
+        <div class="col-xs-6">
+            <input type="text" id="txtCorreo" name="txtCorreo" class="form-control input-sm required"  maxlength="50" />
+        </div>  
+    
+        <label for="nombre" class="col-xs-4 control-label" style="text-align:right;"><span class="naranja"></span>Telefono:</label>
+        
+        <div class="col-xs-6 ">
+            <input type="text" id="txtTelefono2" name="txtTelefono2" class="form-control input-sm required"  maxlength="50" />
+        </div> 
+    <label for="nombre" class="col-xs-4 control-label" style="text-align:right;"><span class="naranja"></span>Telefono 2:</label>
+        
+        <div class="col-xs-6 ">
+            <input type="text" id="txtTelefono" name="txtTelefono" class="form-control input-sm required"  maxlength="50" />
+        </div> 
+    
+      
+    
+     <label for="nombre" class="col-xs-4 control-label" style="text-align:right;"><span class="naranja"></span>Colonia:</label>
+        
+        <div class="col-xs-6 ">
+            <input type="text" id="txtColonia" name="txtColonia" class="form-control input-sm required"  maxlength="50" />
+        </div> 
+
+         <label for="nombre" class="col-xs-4 control-label" style="text-align:right;"><span class="naranja"></span>C.P:</label>
+        
+        <div class="col-xs-6 ">
+            <input type="text" id="txtCp" name="txtCp" class="form-control input-sm required"  maxlength="50" />
+        </div> 
+        
+        
+     	<label for="nombre" class="col-xs-4 control-label" style="text-align:right;"><span class="naranja"></span>Estado:</label>
+        
+        <div class="col-xs-6 ">
+            <select id="txtEstado" class="form-control input-sm" >
+            
+            </select>
+        </div> 
+
+         <label for="nombre" class="col-xs-4 control-label" style="text-align:right;"><span class="naranja"></span>Municipio:</label>
+        
+        <div class="col-xs-6">
+            <select id="txtMunicipio" class="form-control input-sm">
+            
+            </select>
+        </div> 
+
+          
+      
+
+        
+ <div class="col-xs-4 ">
+    <input class="pull-right" name="" id="politicas" type="checkbox" value="">
+    </div>
+    <label for="nombre" class="control-label"><span class="naranja">*</span>Estoy de acuerdo...</label>
+<!--
+<label for="nombre" class="col-xs-3 control-label"><span class="naranja"></span></label>
+           <div class="col-xs-1" style="text-align:right;">
+            <input type="checkbox" id="nombre" style="float:right;" name="nombre" class="form-control input-sm required"  maxlength="50" />
+        </div> 
+        <label for="nombre" class="col-xs-8 control-label"><span class="naranja">*</span>Estoy de acuerdo con las</label>
+-->    
+    </div> 
+     
+</form>
+   <div class="text-center"> <a onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><button type="submit" class="btn btn-azul text-right"><span class="fa fa-key"> </span> Aviso de privacidad</button></a></div>
+     <div id="fade" class="overlay" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"></div>
+<!-- fin base semi-transparente -->
+ 
+<!-- ventana modal -->  
+	<div id="light" class="modal3">
+            <h2 class="text-azul bullet">Aviso de Privacidad</h2>
+<p class="text-justify">Los datos personales proporcionados por Usted u obtenido de nuestra base de datos para su inscripción al Programa de Recompensas LYON BID REWARDS, serán tratados por Sistemas Avanzados Integrales S.C. con domicilio en San Felipe Neri No. 585, Camino Real, Zapopan, Jalisco, México, C.P. 45040  y  Alex Lyon & Son Co. De México, S.A. de C.V con domicilio en Sierra Leona No. 702, Residencial San Agustín, San Pedro Garza García, Nuevo León, México, C.P. 66260.
+<br><br>
+Sus datos serán utilizados para las finalidades necesarias para la operación y funcionamiento del Programa de Recompensas LYON BID REWARDS, si Usted no se opone, se tratarán sus datos personales para otras finalidades secundarias, como lo son actividades de mercadotecnia tanto propias como de terceros.<br><br> 
+Si no desea que sus datos personales sean utilizados para las finalidades secundarias favor de solicitarlo en el siguiente correo electrónico aviso-privacidad@lyonmexico.com o si desea revocar su consentimiento, limitar el uso o divulgación de su información personal usted deberá presentar la solicitud a través del Área de Privacidad encargada de proteger sus datos a los tels: 01-800-000-59-66, 01-81-83-17-27-48 o al correo: aviso-privacidad@lyonmexico.com<br><br>
+
+Para conocer el aviso de privacidad de Sistemas Avanzados Integrales S.C. ingrese a www.avansys.com.mx o bien comunicarse al 01 333 125 6832.<br><br>
+
+    Para conocer el aviso de privacidad de Alex Lyon & Son Co. De México, S.A. de C.V.  ingrese a http://lyonmexico.com/aviso-de-privacidad o al 01 800 000 5966.</p>
+            <h2 class="text-azul bullet">Términos y condiciones</h2>
+        <p class="text-justify">
+            Los siguientes están sujetos a cambio sin previo aviso a juicio exclusivo del emisor, quien únicamente tiene la obligación de avisar con anticipación de su aplicación a los tarjetahabientes por los medios o canales que considere convenientes:<br><br>
+Al aceptar su suscripción a nuestro Programa de Recompensas LYON BID REWARDS reconoce que el uso o aplicación de las Recompensas correspondientes en todo momento podrá ser determinado por el emisor, por lo que el uso del programa por parte del tarjetahabiente en cualquier momento implica su aceptación y acuerdo.<br><br>
+1.- EMISIÓN.  El Programa de Recompensas LYON BID REWARDS emitirá una tarjeta (monedero electrónico) por cliente registrado en nuestras Subastas y esta no podrá ser transferible a persona ajena a la mencionada en la misma, en caso de ser una persona moral le solicitamos verifique que la información del beneficiario descrita sea la correcta y con ello su empresa sea la beneficiada, en caso de contener datos que usted no reconoce por favor solicite la corrección correspondiente, ya que la persona que podrá realizar el canje se los beneficios obtenidos por su empresa, tendrá que ser su Representante Legal.<br><br>
+2.- VALOR. LYON BID REWARDS es un Programa de Recompensas, mediante el cual Usted acumulará dinero electrónico por sus compras realizadas en nuestras Subastas, NO tiene un valor monetario y NO es canjeable por dinero, es solamente canjeable por los productos y/o servicios que el emisor determine como participantes.<br><br>
+3.- OBTENCIÓN. El dinero electrónico que Usted generará está basado en el siguiente esquema:<br><br>
+POR CADA DÓLAR GASTADO ANTES DE I.V.A. Y ANTES DE CARGOS ADMINISTRATIVOS, SE ABONARÁ A SU MONEDERO ELECTRÓNICO $.0025 LYON DÓLAR<br><br>
+CLIENTES REGISTRADOS CON DEPOSITO $25.00 LYON DÓLARES POR SUBASTA<br><br>
+CLIENTES VIP REGISTRADOS $15.00 LYON DÓLARES POR SUBASTA<br><br>
+CONSIGNADORES REGISTRADOS COMO COMPRADORES $15.00 LYON DÓLARES POR SUBASTA<br><br>
+POR CADA $100,000.00 DÓLARES EN COMPRAS ANTES DE I.V.A. Y ANTES DE CARGOS ADMINISTRATIVOS, LYON LE BONIFICARA $100.00 LYON DÓLARES A TU MONEDERO ELECTRÓNICO<br><br>
+Los Tarjetahabientes que se registren con cheque simple o pagaré no acumulan dinero electrónico, en caso de consignadores la bonificación de LYON DÓLARES por registro solo es aplicable si realizaron compras en la Subasta y si sus consignaciones alcanzan a cubrir el monto por registro el cual es equivalente a $10,000.00 dólares americanos.<br><br>
+Para poder generar los montos antes mencionados en nuestro Programa de Recompensas LYON BID REWARDS es necesario haber realizado el pago de sus compras dentro del tiempo estipulado por el emisor, en caso contrario, la penalidad es la pérdida del monto que Usted hubiera podido acumular<br><br>
+4.-DISPONIBILIDAD. El dinero electrónico en su monedero es acumulable y en el mismo se acreditarán en nuestra siguiente Subasta, de tal manera que si usted realizo compras en nuestra Subasta de abril de 2017 su dinero electrónico estará disponible hasta nuestra siguiente Subasta en junio de 2017 y así sucesivamente.<br><br>
+5.- TERRITORIALIDAD. LYON BID REWARDS es un Programa de Recompensas que solo aplica dentro de la República Mexicana y es para uso exclusivo dentro de las Subastas de Alex Lyon & Son Co. De México, S.A. de C.V.  <br><br>
+6.- CANJE. El canje de su monedero electrónico podrá aplicarse de dos maneras:<br><br>
+a) Canje en cargos administrativos: El importe acumulado en su monedero electrónico estará disponible durante el tiempo que el emisor otorga a su tarjetahabiente para el pago de sus compras, el cual es de 7 días hábiles después del día de realización de la Subasta, es necesario enviar un correo electrónico a lyonbidrewards@lyonmexico.com para realizar el canje de sus LYON DÓLARES, anexando su IFE y tarjeta de socio LYON BID REWARDS,  una vez realizado la verificación de los montos disponibles en la cuenta del tarjetahabiente le informaremos que los mismos fueron aplicados en sus cargos administrativos.<br><br>
+El canje del monto acumulado en su monedero electrónico a través de nuestro Programa de Recompensas LYON BID REWARDS solo es aplicable si Usted realiza el pago en tiempo y forma dentro del plazo al que se refiere el párrafo anterior, una vez trascurrido el mismo, Usted no podrá canjear dicho dinero electrónico sino hasta nuestra próxima Subasta.<br><br>
+b) Por premios de nuestro catálogo: es necesario, solicitar de manera escrita el producto de su elección al correo lyonbidrewards@lyonmexico.com para realizar el canje de sus LYON DÓLARES, anexando su IFE y tarjeta de socio LYON BID REWARDS, una vez realizada la verificación de los montos disponibles en la cuenta del tarjetahabiente y la disponibilidad del producto, Usted recibirá un correo confirmando su canje con una clave de confirmación. En caso de canje por premios, los mismos serán entregados en nuestras instalaciones en nuestra siguiente Subasta.<br><br>
+7.- VIGENCIA. El monto acumulado en el Programa de Recompensas LYON BID REWARDS tiene una vigencia de un año calendario contados a partir 21 de abril del 2017 y hasta el 20 de abril del 2018, dejando a partir de esta fecha sin vigencia y efecto, cualquier monto o beneficio si estos no fueron aplicados con previa anticipación y confirmado por parte del emisor.<br><br>
+El tarjetahabiente acepta liberar a Alex Lyon & Son Co. De México, S.A. de C.V., al administrador o a sus proveedores de cualquier responsabilidad por accidentes, lesiones, perdidas, reclamaciones, gastos o daños sufridos por el tarjetahabiente, asociados a cualquier recompensa, los antes mencionados no tendrán responsabilidad alguna en cuanto a daños y perjuicios de forma directa o indirecta.<br><br>
+Alex Lyon & Son Co. De México, S.A. de C.V.  se reserva el derecho de cancelar, modificar o suspender temporal o definitivamente el Programa de Recompensas LYON BID REWARDS a uno o varios de sus usuarios, en cualquier momento, previa comunicación al cliente, ya sea por medio de un escrito, correo electrónico o de manera verbal.<br><br>
+Si Usted decide terminar voluntariamente su participación en nuestro del Programa de Recompensas LYON BID REWARDS la cancelación o suspensión del Programa de Recompensas tiene como penalidad la pérdida del dinero electrónico acumulado hasta el momento.<br><br>
+En caso de fallecer el titular del programa ya sea persona física o moral, se cancelará de forma automática su suscripción y el dinero electrónico que no hayan sido canjeado se cancelara.<br><br>
+El tarjetahabiente acepta que cualquier controversia siempre se resolverá de conformidad con los Términos y Condiciones que estén vigentes en el momento de la realización de la misma sin importar la existencia de alguna versión anterior impresa, en línea o verbal.<br><br>
+Para mayores detalles sobre el funcionamiento del Programa de Recompensas LYON BID REWARDS, favor consultar nuestra página web www.lyonmexico.com o bien comuníquese a nuestra línea gratuita 01 800 000 5966.<br><br>
+*Usted NO podrá pagar con su monedero electrónico de manera total o parcial el importe generado por sus compras, el saldo que Usted tenga acumulado puede ser aplicable a sus cargos administrativos o bien ser canjeable por los premios ofrecidos por el emisor.<br><br>
+**El canje del monto acumulado en su monedero electrónico es solamente canjeable por la persona física señalada como beneficiario o en caso de personas morales a través de su Representante Legal, no se podrá solicitar el canje si usted no es el beneficiario.<br><br>
+*** En caso de no cubrir el total del pago con el monto en su monedero electrónico, el cliente deberá de pagar el excedente de los cargos administrativos o de los premios con dólares americanos.<br><br>
+****Los productos adquiridos con el Programa de Recompensas LYON BID REWARDS no son facturables.<br><br>
+*****El monto acumulado no es transferible a terceros, no tiene valor comercial equivalente a efectivo y no podrán bajo ninguna circunstancia ser canjeables por dinero en efectivo, o bien ser empleados de tal manera que represente una obligación para Alex Lyon & Son Co. De México, S.A. de C.V. con algún tercero.
+        </p>
+        <center>
+ <a onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><button  class="btn-gris"><span class="fa fa-check-circle"> </span> Aceptar</button></a></center>
+    </div>
+
+    
+  <div class=" col-md-12 margin-centro text-center" >
+    <a href="miPerfil.html"><button type="" class="btn-gris"><span class="fa fa-times-circle"> </span> Cancelar</button></a>
+    <a onclick="guardar_datos();"><button  class="btn-gris"><span class="fa fa-check-circle"> </span> Guardar</button></a>
+    </div>
+      
+    
+<div class="nav-inf bg-negro text-blanco " id="menus" style="margin-left:-5%;">
+    <!--<div class="btn-regresar pull-left inline valing-baseline mn2"><a href="#"><span class="fa  fa-shopping-cart"></span></a></div>-->
+
+    <div class="btn-regresar pull-right inline valing-baseline mn"><a href="#"><span class="fa fa-bars"></span></a></div>
+
+</div> 
+
+     
+</div>
+ 
+<!--JS-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/prefixfree.min.js"></script>
+<script src="js/localstorage.js"></script>
+<script src="js/comun.js"></script>
+    <script src="js/menu_generico.js"></script>
+<script src="js/facebook.js"></script>
+    <script src="js/menu.js"></script>
+        <script src="js/main.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript">
+        $(document).ready(function(){
+            
+             if(localStorage.getItem('verifica') == "3"){
+        document.getElementById('menus').style.display = "none";
+    }else{
+         document.getElementById('menus').style.display = "block";
+    }
+             estados();
+            municipios();
+            obtenerDatosPersonales();  
+             
+            $('#txtEstado').change(function(){
+                municipios(); 
+            });
+        });
+    function perfil(){
+         if(localStorage.getItem('verifica') == "3"){
+                alert("Favor de completar registro")
+         }else{
+             window.location = "miPerfil.html"
+         }
+    }
+    
+       
+</script>    
+</body>
+</html>
